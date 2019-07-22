@@ -1,0 +1,14 @@
+version: "3.7"
+services:
+  flask_app:
+    container_name: flask_graphql_boiler
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        buildno: 1
+    ports:
+      - "8666:8666"
+    environment:
+      - LC_CTYPE=C.UTF-8
+      - ENV_VAR=dev
